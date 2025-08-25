@@ -3,22 +3,72 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Template</title>
+    <title>Contact form</title>
     <!-- STYLE -->
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
-    <!-- HEADER START -->
-    <header class="header"></header>
-    <!-- HEADER END -->
-
     <!-- MAIN START -->
-    <main class="main"></main>
-    <!-- MAIN END -->
+    <main class="main">
+      <section class="form">
+        <form action="#">
+          <div class="container">
+            <h1 class="form__title">Contact us</h1>
+            <div class="form__name">
+              <div class="first__name">
+                <label class="name" for="first">
+                  frist name <span class="star">*</span>
+                </label>
+                <input class="form__input" type="text" id="first" />
+              </div>
+              <div class="last__name">
+                <label class="name" for="last">
+                  Last name <span class="star">*</span></label
+                >
+                <input class="form__input" type="text" id="last" />
+              </div>
+            </div>
+            <div class="email__container">
+              <label class="form__email name" for="email"
+                >Email Address <span class="star">*</span></label
+              >
+              <input class="email__input" type="email" id="email" />
+            </div>
 
-    <!-- FOOTER START -->
-    <footer class="footer"></footer>
-    <!-- FOOTER END -->
+            <div class="type">
+              <p class="name">Query type<span class="star">*</span></p>
+              <div class="radio__container">
+                <label class="form__control">
+                  General Enquiry
+                  <input class="type__input" name="type" type="radio" />
+                  <span class="custom__radio" for="option-1"></span>
+                </label>
+                <label  class="form__control">
+                  Support Request
+                  <input
+                    class="type__input"
+                    name="type"
+                    type="radio"
+                    id="option-2"
+                  />
+                  <span class="custom__radio"></span>
+                </label>
+              </div>
+            </div>
+           <div class="form__textarea">
+             <label for="textarea" class="name">Message <span class="star">*</span> </label>
+             <textarea class="textarea" name="textarea" id="textarea" cols="100" rows="5"></textarea>
+           </div>
+           <div class="form__check">
+            <input type="checkbox" id="check" class="check__input">
+            <label for="check" class="check">I consent to being contacted by the team <span class="star">*</span></label>
+           </div>
+           <input type="submit" class="btn">
+          </div>
+        </form>
+      </section>
+    </main>
+    <!-- MAIN END -->
 
     <script src="./js/app.js"></script>
   </body>
