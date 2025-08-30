@@ -10,63 +10,65 @@
   <body>
     <!-- MAIN START -->
     <main class="main">
-      <section class="form">
-        <form action="#">
-          <div class="container">
-            <h1 class="form__title">Contact us</h1>
-            <div class="form__name">
-              <div class="first__name">
-                <label class="name" for="first">
-                  frist name <span class="star">*</span>
-                </label>
-                <input class="form__input" type="text" id="first" />
-              </div>
-              <div class="last__name">
-                <label class="name" for="last">
-                  Last name <span class="star">*</span></label
-                >
-                <input class="form__input" type="text" id="last" />
-              </div>
-            </div>
-            <div class="email__container">
-              <label class="form__email name" for="email"
-                >Email Address <span class="star">*</span></label
-              >
-              <input class="email__input" type="email" id="email" />
-            </div>
+      <form class="form">
+        <h1 class="form__heading">Contact Us</h1>
+        <label class="form__label">
+          <span class="form__label__text">First Name</span>
+          <input class="input__form" type="text" required />
+          <span class="form__label__error"> This field is required </span>
+        </label>
+         <label class="form__label">
+          <span class="form__label__text">Last Name</span>
+          <input class="input__form" type="text" required/>
+          <span class="form__label__error"> This field is required </span>
+        </label>
+        <label class="form__label">
+          <span class="form__label__text">Email Address</span>
+          <input class="input__form" type="email" required/>
+          <span class="form__label__error"> This field is required </span>
+        </label>
+        <label class="form__label">
+          <span class="form__label__text">Query Type</span>
+          <span class="form__inputs__wrapper">
+            <label class="input__wrapper__item">
+              <input
+                class="input__form"
+                type="radio"
+                value="general enquiry"
+                name="query-type"
+              />
+              <span>General Enquiry</span>
+            </label>
+            <label class="input__wrapper__item">
+              <input
+                class="input__form"
+                type="radio"
+                value="general enquiry"
+                name="query-type"
+              />
+              <span>Support Request</span>
+            </label>
+          </span>
+        </label>
 
-            <div class="type">
-              <p class="name">Query type<span class="star">*</span></p>
-              <div class="radio__container">
-                <label class="form__control">
-                  General Enquiry
-                  <input class="type__input" name="type" type="radio" />
-                  <span class="custom__radio" for="option-1"></span>
-                </label>
-                <label  class="form__control">
-                  Support Request
-                  <input
-                    class="type__input"
-                    name="type"
-                    type="radio"
-                    id="option-2"
-                  />
-                  <span class="custom__radio"></span>
-                </label>
-              </div>
-            </div>
-           <div class="form__textarea">
-             <label for="textarea" class="name">Message <span class="star">*</span> </label>
-             <textarea class="textarea" name="textarea" id="textarea" cols="100" rows="5"></textarea>
-           </div>
-           <div class="form__check">
-            <input type="checkbox" id="check" class="check__input">
-            <label for="check" class="check">I consent to being contacted by the team <span class="star">*</span></label>
-           </div>
-           <input type="submit" class="btn">
-          </div>
-        </form>
-      </section>
+        <label class="form__label">
+          <span class="form__label__text">Message</span>
+          <textarea class="form__label__message" name="Message" required></textarea>
+          <span class="form__label__error"> This field is required </span>
+        </label>
+        <div class="form__agreement">
+          <label class="form__agreement__label">
+            <input class="form__agreement__check" type="checkbox" required/>
+            <span class="form__agreement__text">
+              I consent to being contacted by the
+            </span>
+            <span class="form__label__error"> To submit this form, please consent to being contacted </span>
+          </label>
+        </div>
+        <div class="form__btn">
+          <button class="form__submit">Submit</button>
+        </div>
+      </form>
     </main>
     <!-- MAIN END -->
 

@@ -41,233 +41,177 @@ h1 {
 
 body {
   height: 100%;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  place-items: center;
   background-color: #e0f1e8;
   font-family: "Karla", sans-serif;
+  transition: 0.3s;
 }
 
 main {
   flex-grow: 1;
 }
 
-.container {
-  width: 100%;
-  max-width: 736px; /* o'zgaruvchan */
-  margin-inline: auto;
-  padding-inline: 4rem;
-}
-
-.main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .form {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-  background-color: #ffffff;
   width: 100%;
-  height: 100%;
-  max-width: 736px;
-  height: 773px;
+  max-width: 816px;
+  display:  grid;
+  grid-template-columns:repeat(2, 1fr) ;
+  grid-template-rows: repeat(7, 1fr);
+  background-color: #ffffff;
   border-radius: 1.6rem;
+  padding: 4rem;
+  gap: 2.4rem 1.6rem;
 }
 
-.form__title {
-  font-weight: 700;
-  letter-spacing: -1px;
-  color: #2a4144;
-  text-transform: capitalize;
-  font-size: 3.2rem;
-  margin-bottom: 3.2rem;
+.form__heading {
+  grid-column: 1/3;
+  grid-row: 1/2;
 }
 
-.name {
-  font-weight: 400;
-  line-height: 1.5;
-  font-size: 1.6rem;
-  color: #2a4144;
-  text-transform: capitalize;
-  margin-bottom: 0.8rem;
-  margin-right: 0.8rem;
-}
-
-.form__name {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 2.4rem;
-}
-
-.form__input {
-  width: 320px;
-  height: 52px;
-  border: 1px solid #86a2a5;
-  border-radius: 0.8rem;
-}
-.first__name,
-.last__name {
+.form__label{
   display: flex;
   flex-direction: column;
+  gap: 0.8rem;
 }
-.star {
+
+.form__label:nth-child(2) {
+  grid-column: 1/2 ;
+  grid-row: 2/3;
+}
+.form__label:nth-child(3) {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.form__label:nth-child(4) {
+  grid-column: 1/3;
+  grid-row: 3/4;
+}
+.form__label:nth-child(5) {
+  grid-column: 1/3;
+  grid-row: 4/5;
+}
+.form__label:nth-child(6) {
+  grid-column: 1/3;
+  grid-row: 5/6;
+}
+.form__label:nth-child(7) {
+
+}
+.form__label__text, .form__agreement__text {
+  position: relative;
+  line-height: 1.5;
+  color: #2a4144;
+  font-size: 1.6rem;
+}
+
+.form__label__text::after, .form__agreement__text::after{
+  position: absolute;
+  content: "*";
+  color: #0c7d69;
   width: 7px;
   height: 24px;
-  color: #0c7d69;
-  line-height: 1.5;
-  font-size: 1.6rem;
-  font-weight: 400;
+  margin-left: 0.8rem;
 }
-
-.email__container {
-  display: flex;
-  flex-direction: column;
-}
-.form__email {
-  font-weight: 400;
-  line-height: 1.5;
-  font-size: 1.6rem;
-  color: #2a4144;
-  text-transform: capitalize;
-}
-
-.email__input {
-  width: 656px;
-  height: 51px;
+.input__form {
+  font-size: 1.8rem;
+  font-family: inherit;
+  padding: 1.2rem 2.4rem;
+  border: 0;
   border: 1px solid #86a2a5;
   border-radius: 0.8rem;
-  margin-bottom: 2.4rem;
 }
 
-.type label {
-
-    margin-bottom: 1.6rem;
-  
+.input__form:hover{
+  cursor: pointer;
+  border: 1px solid #0c7d69;
 }
 
-.type__input {
-  width: 320px;
-  height: 51px;
-  border: 1px solid #86a2a5;
-  border-radius: 0.8rem;
-  margin-bottom: 2.4rem;
+.input__form:focus{
+  outline: none;
+  border-color: #0c7d69;
 }
-
-.radio__container {
+.form__label__error {
+  display: none;
+  color: #d73c3c;
+}
+.form__inputs__wrapper {
   display: flex;
   gap: 1.6rem;
 }
-
-.radio__btn {
-  position: relative;
-}
- input[type="radio"] {
-  display: none;
-} 
-
-.form__control {
-  justify-content: center;
-  flex-direction: row-reverse;
-  position: relative;
+.input__wrapper__item {
+  padding: 1.2rem 2.4rem;
+  border-radius: 0.8rem;
+  border: 1px solid #86a2a5;
+  flex-grow: 1;
   display: flex;
   align-items: center;
-  font-weight: 400;
-  line-height: 1.5;
-  font-size: 1.6rem;
-  color: #2a4144;
-  text-transform: capitalize;
-  margin-right: 3.2rem;
-  cursor: pointer;
-  width: 320px;
-  height: 51px;
-  border: 1px solid ;
-  border-radius: 0.8rem;
   gap: 1.2rem;
-  margin-bottom: 2.4rem;
+  cursor: pointer;
+  font-size: 1.8rem;
 }
 
-.custom__radio {
-  position: absolute;
-  display: inline-block;
-  align-items: center;
+.input__wrapper__item:hover{
+  border: 1px solid #0c7d69;
   cursor: pointer;
-  border: 1px solid #86a2a5;
-  border-radius: 50%;
-  padding: 1rem;
-  margin: 0.5rem;
+}
+
+.input__wrapper__item:has(input[type="radio"]:checked){
+  background-color: #e0f1e8;
+}
+
+input[type="radio"]{
+  accent-color: #0c7d69;
   width: 24px;
   height: 24px;
-  background-color: #dddddd;
-  left: 0.2rem;
-}  
-
-.form__control:hover .custom__radio {
-  background-color: #0c7d69;
 }
-
-.form__control input:checked ~ .custom__radio {
-  background-color: #3b494a;
-}
-
-.custom__radio::after {
-  content: "";
-  display: flex;
-  width: 10px ;
-  height: 10px;
-  border-radius: 50%;   
-  background-color: #ffffff;
-  align-items: center;
-  align-self: center;
-  text-align: center;
-   position: absolute; 
-}
-.type__input {
-}
-
-/* TEXTAREA */
-.form__textarea {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 4cqb;
-}
-
-.message {
-  margin-bottom: 0.8rem;
-}
-
-.textarea {
-  border-radius: 0.8rem;
-  border: 1px solid #86a2a5;
-
-}
-
-.form__check {
-  display: flex;
-  align-items: center;
-  height: 24px;
-  gap: 1.6rem;
-  margin-bottom: 4rem;
-}
-
-.check__input {
-  
-}
-.check {
-  font-weight: 400;
-  line-height: 1.5; 
-  font-size: 1.6rem;
-  color: #2a4144;
-}
-
-.btn {
-  width: 656px;
-  height: 59px;
-  background-color: #0c7d69;
-  border: none;
-  border-radius: 0.8rem;
-  cursor: pointer;
-  color: #ffffff;
+.form__label__message {
+  resize: none;
+  font-family: inherit;
   font-size: 1.8rem;
+  padding: 1.2rem 2.4rem;
+  height: 105px;
+}
+.form__agreement {
+   grid-column: 1/3;
+  grid-row: 6/7;
+}
+.form__agreement__label {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+.form__agreement__check {
+}
+input[type="checkbox"]{
+  accent-color: #0c7d69;
+  width: 18px;
+  height: 18px;
+}
+.form__agreement__text {
+  position: relative;
+}
+
+.form__agreement__text::after{
+  position: absolute;
+  content: "*";
+}
+
+.form__btn{
+ grid-column: 1/3;
+  grid-row: 7/8;
+  display: flex;
+  width: 100%;
+}
+.form__submit {
+  width: 100%;
+  max-width: 656px;
+  max-height: 59px;
+  border-radius: 0.8rem;
+  background-color: #0c7d69;
+  color: #ffffff;
+  border: none;
   font-weight: 700;
   line-height: 1.5;
+  font-size: 1.8rem;
 }
